@@ -19,7 +19,7 @@ window.DatoCmsPlugin.init((plugin) => {
         break;
 
       case '107442':
-        window.open(`${baseUrl}/cs/umelec/${slug}-${id}`);
+        window.open(`${baseUrl}/cs/profil/${slug}-${id}`);
         break;
 
       default:
