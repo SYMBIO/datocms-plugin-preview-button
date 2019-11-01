@@ -9,7 +9,7 @@ window.DatoCmsPlugin.init((plugin) => {
   const { baseUrl } = plugin.parameters.global;
   const button = document.createElement('button');
   button.type = 'button';
-  button.classList.add(['DatoCMS-button', 'DatoCMS-button--primary']);
+  button.classList.add('DatoCMS-button DatoCMS-button--primary');
   button.onclick = (e) => {
     const slug = plugin.getFieldValue('slug.cs');
     const id = plugin.itemId;
