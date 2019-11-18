@@ -12,6 +12,7 @@ window.DatoCmsPlugin.init((plugin) => {
   button.className = 'DatoCMS-button DatoCMS-button--primary';
   button.onclick = (e) => {
     const slug = plugin.getFieldValue('slug.cs');
+    const url = plugin.getFieldValue('url.cs');
     const id = plugin.itemId;
     switch (plugin.itemType.id) {
       case '111456':
@@ -20,6 +21,10 @@ window.DatoCmsPlugin.init((plugin) => {
 
       case '107442':
         window.open(`${baseUrl}/cs/profil/${slug}-${id}`);
+        break;
+
+      case '99631':
+        window.open(`${baseUrl}/cs/${url}`);
         break;
 
       default:
