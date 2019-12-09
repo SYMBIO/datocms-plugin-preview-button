@@ -11,20 +11,25 @@ window.DatoCmsPlugin.init((plugin) => {
   button.type = 'button';
   button.className = 'DatoCMS-button DatoCMS-button--primary';
   button.onclick = (e) => {
-    const slug = plugin.getFieldValue('slug.cs');
-    const url = plugin.getFieldValue('url.cs');
+    const { locale } = plugin;
+    const slug = plugin.getFieldValue(`slug.${locale}`);
+    const url = plugin.getFieldValue(`url.${locale}`);
     const id = plugin.itemId;
     switch (plugin.itemType.id) {
-      case '111456':
-        window.open(`${baseUrl}/cs/predstaveni/${slug}-${id}`);
+      case '111456': {
+        const path = locale === 'en' ? 'show' : 'predstaveni';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
         break;
+      }
 
-      case '107442':
-        window.open(`${baseUrl}/cs/profil/${slug}-${id}`);
+      case '107442': {
+        const path = locale === 'en' ? 'profile' : 'profil';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
         break;
+      }
 
       case '99631':
-        window.open(`${baseUrl}/cs/${url}`);
+        window.open(`${baseUrl}/${locale}/${url}`);
         break;
 
       default:
