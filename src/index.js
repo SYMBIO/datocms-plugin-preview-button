@@ -22,6 +22,13 @@ window.DatoCmsPlugin.init((plugin) => {
         break;
       }
 
+      case '111455': {
+        const path = locale === 'en' ? 'show' : 'predstaveni';
+        const startAt = plugin.getFieldValue('start_at');
+        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}?t=${startAt}`);
+        break;
+      }
+
       case '107442': {
         const path = locale === 'en' ? 'profile' : 'profil';
         window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
