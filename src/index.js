@@ -24,8 +24,9 @@ window.DatoCmsPlugin.init((plugin) => {
 
       case '111455': {
         const path = locale === 'en' ? 'show' : 'predstaveni';
+        const production = plugin.getFieldValue('production');
         const startAt = plugin.getFieldValue('start_at');
-        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}?t=${startAt}`);
+        window.open(`${baseUrl}/${locale}/${path}/nahled-${production}?t=${startAt}`);
         break;
       }
 
