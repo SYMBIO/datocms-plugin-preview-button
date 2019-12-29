@@ -46,6 +46,18 @@ window.DatoCmsPlugin.init((plugin) => {
         window.open(`${baseUrl}/${locale}/${url}`);
         break;
 
+      case '114410': {
+        const path = locale === 'en' ? 'news' : 'aktuality';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}`);
+        break;
+      }
+
+      case '111481': {
+        const path = locale === 'en' ? 'press-releases' : 'tiskove-zpravy';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}`);
+        break;
+      }
+
       default:
         break;
     }
