@@ -59,6 +59,7 @@ window.DatoCmsPlugin.init((plugin) => {
       }
 
       default:
+        window.open(`${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`);
         break;
     }
     e.preventDefault();
