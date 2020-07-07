@@ -1,8 +1,8 @@
 {
   "name": "datocms-plugin-preview-button",
   "homepage": "https://github.com/SYMBIO/datocms-plugin-preview-button",
-  "version": "0.0.1",
-  "description": "Preview button for National Theatre",
+  "version": "0.1.0",
+  "description": "Preview button for DatoCMS",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"yarn dev\" \"yarn localtunnel\"",
@@ -27,7 +27,7 @@
   "author": "SYMBIO <dev@symbio.agency>",
   "license": "ISC",
   "datoCmsPlugin": {
-    "title": "ND Preview Button",
+    "title": "Preview Button",
     "previewImage": "docs/preview.gif",
     "coverImage": "docs/cover.png",
     "entryPoint": "dist/index.html",
@@ -39,11 +39,19 @@
       "global": [
         {
           "id": "baseUrl",
-          "label": "Base URL",
+          "label": "Preview endpoint URL",
           "type": "string",
           "required": true,
-          "default": "https://nd-test.symbio.now.sh",
-          "hint": "Base URL for ND test version"
+          "default": "",
+          "hint": "URL of endpoint which makes redirection to real preview page"
+        },
+        {
+          "id": "label",
+          "label": "Button label",
+          "type": "string",
+          "required": false,
+          "default": "Open preview",
+          "hint": "Label of button in the sidebar"
         }
       ],
       "instance": []
