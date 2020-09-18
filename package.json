@@ -85,5 +85,9 @@
     "webpack-dev-server": "^3.11.0",
     "yo": "^3.1.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
 }
