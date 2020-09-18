@@ -11,7 +11,7 @@ window.DatoCmsPlugin.init((plugin) => {
   button.type = 'button';
   button.className = 'DatoCMS-button DatoCMS-button--primary';
   button.onclick = (e) => {
-    const { locale } = plugin;
+    const locale = plugin.locale || plugin.site.attributes.locales[0];
     const slug = plugin.getFieldValue(`slug.${locale}`);
     const url = plugin.getFieldValue(`url.${locale}`);
     const id = plugin.itemId;
