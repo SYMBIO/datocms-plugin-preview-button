@@ -1,6 +1,6 @@
-# ND Preview Button DatoCMS plugin
+Preview Button DatoCMS plugin
 
-Preview button for National Theatre
+Preview button for DatoCMS
 
 ## Configuration
 
