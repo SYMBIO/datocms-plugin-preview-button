@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-preview-button",
   "homepage": "https://github.com/SYMBIO/datocms-plugin-preview-button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Configurable preview button for DatoCMS",
   "main": "public/bundle.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "dev": "NODE_ENV=development webpack-dev-server --port 5000",
     "dist": "NODE_ENV=production webpack --progress",
     "build": "NODE_ENV=production webpack --progress",
-    "prepublishOnly": "rimraf lib public && mkdir public && npm run public",
+    "prepublishOnly": "rimraf lib public && mkdir public && npm run dist",
     "addToProject": "yo datocms-plugin:add-to-project",
     "test": "echo 1"
   },
