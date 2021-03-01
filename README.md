@@ -1,4 +1,4 @@
-Preview Button DatoCMS plugin
+# Preview Button DatoCMS plugin
 
 Preview button for DatoCMS
 
