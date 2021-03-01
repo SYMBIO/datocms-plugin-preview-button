@@ -30,7 +30,7 @@
     "title": "General Preview Button",
     "previewImage": "docs/preview.gif",
     "coverImage": "docs/cover.png",
-    "entryPoint": "dist/index.html",
+    "entryPoint": "public/index.html",
     "pluginType": "sidebar",
     "fieldTypes": [
       "boolean"
