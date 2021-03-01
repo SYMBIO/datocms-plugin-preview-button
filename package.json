@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-preview-button",
   "homepage": "https://github.com/SYMBIO/datocms-plugin-preview-button",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Configurable preview button for DatoCMS",
   "main": "public/bundle.js",
   "scripts": {
