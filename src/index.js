@@ -36,6 +36,12 @@ window.DatoCmsPlugin.init((plugin) => {
         break;
       }
 
+      case '534115': {
+        const path = locale === 'en' ? 'vod' : 'vod';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
+        break;
+      }
+
       case '107442': {
         const path = locale === 'en' ? 'profile' : 'profil';
         window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
@@ -59,7 +65,9 @@ window.DatoCmsPlugin.init((plugin) => {
       }
 
       default:
-        window.open(`${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`);
+        window.open(
+          `${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`,
+        );
         break;
     }
     e.preventDefault();
