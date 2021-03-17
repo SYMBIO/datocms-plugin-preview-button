@@ -1,17 +1,15 @@
 {
   "name": "datocms-plugin-preview-button",
   "homepage": "https://github.com/SYMBIO/datocms-plugin-preview-button",
-  "version": "0.0.1",
-  "description": "Preview button for National Theatre",
-  "main": "index.js",
+  "version": "0.1.4",
+  "description": "Configurable preview button for DatoCMS",
+  "main": "public/bundle.js",
   "scripts": {
-    "start": "concurrently \"yarn dev\" \"yarn localtunnel\"",
-    "localtunnel": "lt -s datocms-plugin-preview-button --port 5000",
-    "dev": "NODE_ENV=development webpack-dev-server --port 5000",
+    "start": "NODE_ENV=development webpack-dev-server --port 5000",
     "dist": "NODE_ENV=production webpack --progress",
-    "build": "NODE_ENV=production webpack --progress",
-    "prepublishOnly": "rimraf lib public && mkdir public && npm run dist",
     "addToProject": "yo datocms-plugin:add-to-project",
+    "prepublishOnly": "rimraf lib public && mkdir public && npm run dist",
+    "lint": "eslint \"./src/*.{js,jsx}\"",
     "test": "echo 1"
   },
   "keywords": [
@@ -27,7 +25,7 @@
   "author": "SYMBIO <dev@symbio.agency>",
   "license": "ISC",
   "datoCmsPlugin": {
-    "title": "ND Preview Button",
+    "title": "General Preview Button",
     "previewImage": "docs/preview.gif",
     "coverImage": "docs/cover.png",
     "entryPoint": "public/index.html",
@@ -39,43 +37,54 @@
       "global": [
         {
           "id": "baseUrl",
-          "label": "Base URL",
+          "label": "Preview endpoint URL",
           "type": "string",
           "required": true,
-          "default": "https://nd-test.symbio.now.sh",
-          "hint": "Base URL for ND test version"
+          "default": "",
+          "hint": "URL of endpoint which makes redirection to real preview page"
+        },
+        {
+          "id": "label",
+          "label": "Button label",
+          "type": "string",
+          "required": false,
+          "default": "Open preview",
+          "hint": "Label of button in the sidebar"
         }
       ],
       "instance": []
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.54",
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/preset-env": "^7.0.0-beta.54",
-    "@babel/register": "^7.0.0-beta.54",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^8.0.0-beta",
-    "concurrently": "^4.0.1",
-    "css-loader": "^1.0.0",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-import-resolver-webpack": "^0.10.1",
-    "eslint-loader": "^2.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "generator-datocms-plugin": "^1.0.3",
-    "html-webpack-include-assets-plugin": "^1.0.5",
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/register": "^7.13.8",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.3",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "generator-datocms-plugin": "^1.0.26",
     "html-webpack-inline-source-plugin": "^0.0.10",
-    "html-webpack-plugin": "^3.2.0",
-    "localtunnel": "^1.9.1",
+    "html-webpack-plugin": "^4.5.2",
+    "html-webpack-tags-plugin": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.3",
-    "prettier": "^1.18.2",
-    "serve": "^10.0.2",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.10",
-    "yo": "^2.0.5"
+    "prettier": "^2.2.1",
+    "serve": "^11.3.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "yo": "^3.1.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
 }
