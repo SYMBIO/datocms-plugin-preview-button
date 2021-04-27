@@ -64,6 +64,12 @@ window.DatoCmsPlugin.init((plugin) => {
         break;
       }
 
+      case '698780': {
+        const path = locale === 'en' ? 'e-magazine' : 'e-casopis';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}-${id}`);
+        break;
+      }
+
       default:
         window.open(
           `${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`,
