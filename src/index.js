@@ -77,7 +77,7 @@ window.DatoCmsPlugin.init((plugin) => {
       }
 
       case '111972': {
-        const path = locale === 'en' ? 'e-shop/poukazka' : 'e-shop/voucher';
+        const path = locale === 'en' ? 'e-shop/voucher' : 'e-shop/poukazka';
         window.open(`${baseUrl}/${locale}/${path}/${slug}`);
         break;
       }
