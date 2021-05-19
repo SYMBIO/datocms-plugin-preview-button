@@ -70,6 +70,18 @@ window.DatoCmsPlugin.init((plugin) => {
         break;
       }
 
+      case '111878': {
+        const path = locale === 'en' ? 'e-shop' : 'e-shop';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}`);
+        break;
+      }
+
+      case '111972': {
+        const path = locale === 'en' ? 'e-shop/poukazka' : 'e-shop/voucher';
+        window.open(`${baseUrl}/${locale}/${path}/${slug}`);
+        break;
+      }
+
       default:
         window.open(
           `${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`,
