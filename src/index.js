@@ -11,12 +11,17 @@ window.DatoCmsPlugin.init((plugin) => {
   button.type = 'button';
   button.className = 'DatoCMS-button DatoCMS-button--primary';
   button.onclick = (e) => {
-    const locale = plugin.locale || plugin.site.attributes.locales[0];
-    const slug = plugin.getFieldValue(`slug.${locale}`);
-    const url = plugin.getFieldValue(`url.${locale}`);
-    window.open(
-      `${baseUrl}?locale=${locale}&type=${plugin.itemType.id}&id=${plugin.itemId}&slug=${slug}&url=${url}`,
-    );
+    const { locale } = plugin;
+    const params = {
+      locale,
+      slug: plugin.getFieldValue(locale ? `slug.${locale}` : 'slug'),
+      url: plugin.getFieldValue(locale ? `url.${locale}` : 'url'),
+      id: plugin.itemId,
+      type: plugin.itemType.id,
+    };
+
+    const urlParams = Object.keys(params).map((key) => (params[key] ? `${key}=${encodeURIComponent(params[key])}` : false)).filter(Boolean).join('&');
+    window.open(`${baseUrl}?${urlParams}`);
     e.preventDefault();
     return false;
   };
