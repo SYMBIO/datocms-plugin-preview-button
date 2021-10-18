@@ -31,10 +31,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -45,8 +42,8 @@ module.exports = {
     }),
     new HtmlWebpackTagsPlugin({
       tags: [
-        'https://unpkg.com/datocms-plugins-sdk/dist/sdk.js',
-        'https://unpkg.com/datocms-plugins-sdk/dist/sdk.css',
+        'https://unpkg.com/datocms-plugins-sdk@0.1.2/dist/sdk.js',
+        'https://unpkg.com/datocms-plugins-sdk@0.1.2/dist/sdk.css',
       ],
       append: false,
     }),
