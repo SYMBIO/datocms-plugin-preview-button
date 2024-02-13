@@ -59,7 +59,7 @@ window.DatoCmsPlugin.init((plugin) => {
       }
 
       case '111481': {
-        const path = locale === 'en' ? 'press-releases' : 'tiskove-zpravy';
+        const path = locale === 'en' ? 'for-press/press-releases' : 'pro-novinare/tiskove-zpravy';
         window.open(`${baseUrl}/${locale}/${path}/${slug}`);
         break;
       }
